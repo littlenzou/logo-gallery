@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Logo Design Gallery | LITTLE NZOU Creative Studio</title>
+<meta name="description" content="Explore selected brand identity and logo design projects by Little Nzou Creative Studio in Dubai, UAE." />
+
+<!-- FAVICON / WEBSITE TAB ICON -->
+<link rel="icon" type="image/png" href="website_tab_icon.png" />
+<link rel="shortcut icon" type="image/png" href="website_tab_icon.png" />
+<link rel="apple-touch-icon" href="website_tab_icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Marcellus&family=Marcellus+SC&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+  --white: #FFFFFF;
+  --black: #0A0A0A;
+  --gold: #C8A951;
+  --gold-light: #E8D08A;
+  --navy: #1A1A2E;
+  --sienna: #D4622A;
+  --grey-light: #F5F5F5;
+  --grey-mid: #E0E0E0;
+  --grey-text: #6B6B6B;
+  --font-main-nzou: 'Marcellus SC', Georgia, serif;
+  --font-studio: 'Marcellus SC', Georgia, serif;
+  --font-tagline: 'Open Sans', sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-ui: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --ease: 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+  --max-w: 1200px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-display);
+  background: var(--white);
+  color: var(--black);
+  overflow-x: hidden;
+  line-height: 1.7;
+  font-size: 18px;
+}
+a { text-decoration: none; color: inherit; }
+
+/* DOODLE CANVAS */
+#doodle-canvas {
+  position: fixed; top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none; z-index: 0; opacity: 0.038;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 52px;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--grey-mid);
+  transition: box-shadow var(--ease);
+}
+nav.scrolled { box-shadow: 0 2px 32px rgba(0,0,0,0.07); }
+.nav-logo-container {
+  display: flex; flex-direction: column; align-items: center; text-decoration: none;
+}
+.nav-logo-icon { height: 38px; width: auto; object-fit: contain; margin-bottom: 2px; display: block; }
+.nav-logo {
+  font-family: var(--font-main-nzou); font-size: 1.35rem; font-weight: 700;
+  letter-spacing: 0.01em; text-transform: uppercase; line-height: 1;
+}
+.nav-logo span { color: var(--gold); font-style: normal; }
+.nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+.nav-links a {
+  font-family: var(--font-ui); font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--black);
+  position: relative; transition: color var(--ease);
+}
+.nav-links a::after {
+  content: ''; position: absolute; left: 0; bottom: -3px;
+  width: 0; height: 1px; background: var(--gold); transition: width var(--ease);
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  background: var(--black) !important; color: var(--white) !important;
+  padding: 9px 24px !important; border-radius: 1px; transition: background var(--ease) !important;
+}
+.nav-cta:hover { background: var(--gold) !important; color: var(--black) !important; }
+.nav-cta::after { display: none !important; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
+.hamburger span { display: block; width: 26px; height: 1.5px; background: var(--black); }
+
+/* HERO HEADER */
+.page-header {
+  padding: 160px 24px 60px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(200,169,81,0.06) 0%, transparent 70%);
+}
+.page-eyebrow {
+  font-family: var(--font-mono); font-size: 0.62rem;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 16px;
+}
+.page-title {
+  font-family: var(--font-main-nzou);
+  font-size: clamp(2.5rem, 6vw, 4.8rem);
+  font-weight: 700; line-height: 1.1; letter-spacing: -0.01em;
+  color: var(--black); margin-bottom: 16px; text-transform: uppercase;
+}
+.page-title em { font-style: italic; color: var(--gold); font-family: var(--font-display); font-weight: 400; text-transform: none; }
+.page-sub {
+  font-family: var(--font-display); font-size: 1.15rem; font-weight: 300;
+  color: var(--grey-text); max-width: 600px; margin: 0 auto; line-height: 1.8;
+}
+
+/* SECTION & GRID */
+section { position: relative; z-index: 1; }
+.section-inner { max-width: var(--max-w); margin: 0 auto; padding: 40px 24px 100px; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.gallery-card {
+  background: var(--white);
+  border: 1px solid var(--grey-mid);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.gallery-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+.card-img-wrap {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: var(--grey-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.card-img-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+.gallery-card:hover .card-img-wrap img {
+  transform: scale(1.05);
+}
+.card-overlay {
+  position: absolute; inset: 0;
+  background: rgba(10,10,10,0.5);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity var(--ease);
+}
+.gallery-card:hover .card-overlay { opacity: 1; }
+.card-view-ring {
+  width: 44px; height: 44px; border: 1.5px solid var(--gold);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  color: var(--gold); background: rgba(10,10,10,0.4);
+}
+.card-info {
+  padding: 16px 20px;
+  border-top: 1px solid var(--grey-mid);
+  background: var(--white);
+  flex-grow: 1;
+}
+.card-tag {
+  font-family: var(--font-mono); font-size: 0.58rem;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 4px;
+}
+.card-title {
+  font-family: var(--font-display); font-size: 1.1rem;
+  font-weight: 600; color: var(--black); line-height: 1.3;
+}
+
+/* BACK BUTTON CONTAINER */
+.back-bar {
+  text-align: center;
+  margin-top: 60px;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--black); color: var(--white);
+  padding: 14px 38px;
+  font-family: var(--font-ui); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  border: 1.5px solid var(--black); border-radius: 1px; cursor: pointer;
+  transition: background var(--ease), color var(--ease), border-color var(--ease), transform var(--ease);
+}
+.btn-primary:hover { background: var(--gold); border-color: var(--gold); color: var(--black); transform: translateY(-2px); }
+
+/* LIGHTBOX MODAL */
+.modal {
+  display: none; position: fixed; inset: 0; z-index: 200;
+  background: rgba(10,10,10,0.92); backdrop-filter: blur(8px);
+  align-items: center; justify-content: center; padding: 24px;
+}
+.modal.open { display: flex; }
+.modal-content {
+  position: relative; max-width: 90vw; max-height: 85vh;
+  display: flex; flex-direction: column; align-items: center;
+}
+.modal-content img {
+  max-width: 100%; max-height: 75vh; object-fit: contain;
+  border-radius: 2px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+.modal-caption {
+  font-family: var(--font-display); font-size: 1.3rem;
+  color: var(--white); margin-top: 16px; text-align: center;
+}
+.modal-close {
+  position: absolute; top: -45px; right: 0;
+  color: var(--white); font-size: 2rem; cursor: pointer;
+  background: none; border: none; line-height: 1; transition: color var(--ease);
+}
+.modal-close:hover { color: var(--gold); }
+
+/* FOOTER */
+footer { background: var(--black); padding: 52px 24px 32px; position: relative; z-index: 1; }
+.footer-inner { max-width: var(--max-w); margin: 0 auto; }
+.footer-top {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 32px; flex-wrap: wrap; gap: 32px;
+}
+.footer-logo { font-family: var(--font-main-nzou); font-size: 1.6rem; font-weight: 700; color: var(--white); text-transform: uppercase; }
+.footer-logo span { font-family: var(--font-studio); font-weight: 400; text-transform: none; }
+.footer-tagline { font-family: var(--font-tagline); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: none; color: rgba(255,255,255,0.4); margin-top: 6px; }
+.footer-nav { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; align-items: center; }
+.footer-nav a { font-family: var(--font-ui); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); transition: color var(--ease); }
+.footer-nav a:hover { color: var(--gold); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+.footer-copy { font-family: var(--font-ui); font-size: 0.7rem; color: rgba(255,255,255,0.22); }
+.footer-loc { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.14em; color: rgba(255,255,255,0.22); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  nav { padding: 18px 24px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: fixed; top: 76px; left: 0; right: 0;
+    background: var(--white); padding: 24px 28px; gap: 20px;
+    border-bottom: 1px solid var(--grey-mid); z-index: 99;
+  }
+}
+</style>
+</head>
+<body>
+
+<canvas id="doodle-canvas"></canvas>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="index.html#home" class="nav-logo-container">
+    <img src="website_tab_icon.png" alt="Little Nzou Icon" class="nav-logo-icon" />
+    <span class="nav-logo">LITTLE <span>NZOU</span></span>
+  </a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#portfolio">Portfolio</a></li>
+    <li><a href="index.html#process">Process</a></li>
+    <li><a href="index.html#shop">Shop</a></li>
+    <li><a href="index.html#tutorials">Tutorials</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-header">
+  <p class="page-eyebrow">Portfolio Archive</p>
+  <h1 class="page-title">Logo Design <em>Gallery</em></h1>
+  <p class="page-sub">A curated selection of brand marks, corporate identities, and custom logos crafted for businesses across Dubai, the UAE, and globally.</p>
+</header>
+
+<!-- GALLERY GRID -->
+<section>
+  <div class="section-inner">
+    <div class="gallery-grid">
+
+      <!-- 1. April Media -->
+      <div class="gallery-card" onclick="openModal('April Media.png', 'April Media — Logo Design')">
+        <div class="card-img-wrap">
+          <img src="April Media.png" alt="April Media Logo" />
+          <div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
+        </div>
+        <div class="card-info"><p class="card-tag">Logo Design</p><h3 class="card-title">April Media</h3></div>
+      </div>
+
+      <!-- 2. Biskop Media -->
+      <div class="gallery-card" onclick="openModal('Biskop Media.png', 'Biskop Media — Brand Mark')">
+        <div class="card-img-wrap">
+          <img src="Biskop Media.png" alt="Biskop Media Logo" />
+          <div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
+        </div>
+        <div class="card-info"><p class="card-tag">Logo Design</p><h3 class="card-title">Biskop Media</h3></div>
+      </div>
+
+      <!-- 3. Blue Republic -->
+      <div class="gallery-card" onclick="openModal('Blue Republic.png', 'Blue Republic — Corporate Logo')">
+        <div class="card-img-wrap">
+          <img src="Blue Republic.png" alt="Blue Republic Logo" />
+          <div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
+        </div>
+        <div class="card-info"><p class="card-tag">Logo Design</p><h3 class="card-title">Blue Republic</h3></div>
+      </div>
+
+      <!-- 4. Breakfast Basket -->
+      <div class="gallery-card" onclick="openModal('Breakfast Basket.png', 'Breakfast Basket — F&B Brand Mark')">
+        <div class="card-img-wrap">
+          <img src="Breakfast Basket.png" alt="Breakfast Basket Logo" />
+          <div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
+        </div>
+        <div class="card-info"><p class="card-tag">F&amp;B Identity</p><h3 class="card-title">Breakfast Basket</h3></div>
+      </div>
+
+      <!-- 5. Colt Express -->
+      <div class="gallery-card" onclick="openModal('Colt Express.png', 'Colt Express — Logistics Logo')">
+        <div class="card-img-wrap">
+          <img src="Colt Express.png" alt="Colt Express Logo" />
+          <div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
+        </div>
+        <div class="card-info"><p class="card-tag">Logo Design</p><h3 class="card-title">Colt Express</h3></div>
+      </div>
+
+      <!-- 6. LinnLin's Online Store -->
+      <div class="gallery-card" onclick="openModal('LinnLin\'s Online Store.png', 'LinnLin\'s Online Store — E-commerce Brand')">
+        <div class="card-img-wrap">
+          <img src="LinnLin's Online Store.png" alt="LinnLin's Online Store Logo" />
+          <div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
+        </div>
+        <div class="card-info"><p class="card-tag">E-Commerce</p><h3 class="card-title">LinnLin's Online Store</h3></div>
+      </div>
+
+      <!-- 7. Mustard Seed -->
+      <div class="gallery-card" onclick="openModal('Mustard Seed.png', 'Mustard Seed — Brand Identity')">
+        <div class="card-img-wrap">
+          <img src="Mustard Seed.png" alt="Mustard Seed Logo" />
+          <div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
+        </div>
+        <div class="card-info"><p class="card-tag">Logo Design</p><h3 class="card-title">Mustard Seed</h3></div>
+      </div>
+
+      <!-- 8. Quantum Chemicals -->
+      <div class="gallery-card" onclick="openModal('Quantum Chemicals.png', 'Quantum Chemicals — Corporate Mark')">
+        <div class="card-img-wrap">
+          <img src="Quantum Chemicals.png" alt="Quantum Chemicals Logo" />
+          <div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
+        </div>
+        <div class="card-info"><p class="card-tag">Industrial Identity</p><h3 class="card-title">Quantum Chemicals</h3></div>
+      </div>
+
+      <!-- 9. Royal Engines -->
+      <div class="gallery-card" onclick="openModal('Royal Engines.png', 'Royal Engines — Automotive Brand')">
+        <div class="card-img-wrap">
+          <img src="Royal Engines.png" alt="Royal Engines Logo" />
+          <div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
+        </div>
+        <div class="card-info"><p class="card-tag">Automotive</p><h3 class="card-title">Royal Engines</h3></div>
+      </div>
+
+      <!-- 10. Shona -->
+      <div class="gallery-card" onclick="openModal('Shona.png', 'Shona — Cultural Brand Mark')">
+        <div class="card-img-wrap">
+          <img src="Shona.png" alt="Shona Logo" />
+          <div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
+        </div>
+        <div class="card-info"><p class="card-tag">Brand Identity</p><h3 class="card-title">Shona</h3></div>
+      </div>
+
+      <!-- 11. Skyline Leasing -->
+      <div class="gallery-card" onclick="openModal('Skyline Leasing.png', 'Skyline Leasing Dubai — Real Estate Logo')">
+        <div class="card-img-wrap">
+          <img src="Skyline Leasing.png" alt="Skyline Leasing Logo" />
+          <div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
+        </div>
+        <div class="card-info"><p class="card-tag">Real Estate</p><h3 class="card-title">Skyline Leasing</h3></div>
+      </div>
+
+      <!-- 12. The Big Corporation -->
+      <div class="gallery-card" onclick="openModal('The Big Corporation.png', 'The Big Corporation — Corporate Identity')">
+        <div class="card-img-wrap">
+          <img src="The Big Corporation.png" alt="The Big Corporation Logo" />
+          <div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
+        </div>
+        <div class="card-info"><p class="card-tag">Corporate Brand</p><h3 class="card-title">The Big Corporation</h3></div>
+      </div>
+
+      <!-- 13. The Big Energy Group -->
+      <div class="gallery-card" onclick="openModal('The Big Energy Group.png', 'The Big Energy Group — Logo Design')">
+        <div class="card-img-wrap">
+          <img src="The Big Energy Group.png" alt="The Big Energy Group Logo" />
+          <div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
+        </div>
+        <div class="card-info"><p class="card-tag">Energy Sector</p><h3 class="card-title">The Big Energy Group</h3></div>
+      </div>
+
+      <!-- 14. The Big Tech Electronics -->
+      <div class="gallery-card" onclick="openModal('The Big Tech Electronics.png', 'The Big Tech Electronics — Tech Brand')">
+        <div class="card-img-wrap">
+          <img src="The Big Tech Electronics.png" alt="The Big Tech Electronics Logo" />
+          <div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
+        </div>
+        <div class="card-info"><p class="card-tag">Technology</p><h3 class="card-title">The Big Tech Electronics</h3></div>
+      </div>
+
+      <!-- 15. Tonsha Stationery Market -->
+      <div class="gallery-card" onclick="openModal('Tonsha Stationery Market.png', 'Tonsha Stationery Market — Retail Brand')">
+        <div class="card-img-wrap">
+          <img src="Tonsha Stationery Market.png" alt="Tonsha Stationery Market Logo" />
+          <div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
+        </div>
+        <div class="card-info"><p class="card-tag">Retail Brand</p><h3 class="card-title">Tonsha Stationery Market</h3></div>
+      </div>
+
+      <!-- 16-25 Placeholder cards ready for your remaining 10 logos -->
+      <div class="gallery-card" onclick="openModal('Logo_16.png', 'Brand Mark Design')">
+        <div class="card-img-wrap"><img src="Logo_16.png" alt="Brand Mark 16" /><div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div></div>
+        <div class="card-info"><p class="card-tag">Logo Design</p><h3 class="card-title">Brand Identity Design</h3></div>
+      </div>
+      <div class="gallery-card" onclick="openModal('Logo_17.png', 'Brand Mark Design')">
+        <div class="card-img-wrap"><img src="Logo_17.png" alt="Brand Mark 17" /><div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div></div>
+        <div class="card-info"><p class="card-tag">Logo Design</p><h3 class="card-title">Brand Identity Design</h3></div>
+      </div>
+      <div class="gallery-card" onclick="openModal('Logo_18.png', 'Brand Mark Design')">
+        <div class="card-img-wrap"><img src="Logo_18.png" alt="Brand Mark 18" /><div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div></div>
+        <div class="card-info"><p class="card-tag">Logo Design</p><h3 class="card-title">Brand Identity Design</h3></div>
+      </div>
+      <div class="gallery-card" onclick="openModal('Logo_19.png', 'Brand Mark Design')">
+        <div class="card-img-wrap"><img src="Logo_19.png" alt="Brand Mark 19" /><div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div></div>
+        <div class="card-info"><p class="card-tag">Logo Design</p><h3 class="card-title">Brand Identity Design</h3></div>
+      </div>
+      <div class="gallery-card" onclick="openModal('Logo_20.png', 'Brand Mark Design')">
+        <div class="card-img-wrap"><img src="Logo_20.png" alt="Brand Mark 20" /><div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div></div>
+        <div class="card-info"><p class="card-tag">Logo Design</p><h3 class="card-title">Brand Identity Design</h3></div>
+      </div>
+      <div class="gallery-card" onclick="openModal('Logo_21.png', 'Brand Mark Design')">
+        <div class="card-img-wrap"><img src="Logo_21.png" alt="Brand Mark 21" /><div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div></div>
+        <div class="card-info"><p class="card-tag">Logo Design</p><h3 class="card-title">Brand Identity Design</h3></div>
+      </div>
+      <div class="gallery-card" onclick="openModal('Logo_22.png', 'Brand Mark Design')">
+        <div class="card-img-wrap"><img src="Logo_22.png" alt="Brand Mark 22" /><div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div></div>
+        <div class="card-info"><p class="card-tag">Logo Design</p><h3 class="card-title">Brand Identity Design</h3></div>
+      </div>
+      <div class="gallery-card" onclick="openModal('Logo_23.png', 'Brand Mark Design')">
+        <div class="card-img-wrap"><img src="Logo_23.png" alt="Brand Mark 23" /><div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div></div>
+        <div class="card-info"><p class="card-tag">Logo Design</p><h3 class="card-title">Brand Identity Design</h3></div>
+      </div>
+      <div class="gallery-card" onclick="openModal('Logo_24.png', 'Brand Mark Design')">
+        <div class="card-img-wrap"><img src="Logo_24.png" alt="Brand Mark 24" /><div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div></div>
+        <div class="card-info"><p class="card-tag">Logo Design</p><h3 class="card-title">Brand Identity Design</h3></div>
+      </div>
+      <div class="gallery-card" onclick="openModal('Logo_25.png', 'Brand Mark Design')">
+        <div class="card-img-wrap"><img src="Logo_25.png" alt="Brand Mark 25" /><div class="card-overlay"><div class="card-view-ring"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div></div>
+        <div class="card-info"><p class="card-tag">Logo Design</p><h3 class="card-title">Brand Identity Design</h3></div>
+      </div>
+
+    </div>
+
+    <div class="back-bar">
+      <a href="index.html#portfolio" class="btn-primary">
+        ← Back to Main Website
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX MODAL -->
+<div class="modal" id="imageModal" onclick="closeModal(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal(event)">&times;</button>
+    <img id="modalImg" src="" alt="Expanded View" />
+    <div class="modal-caption" id="modalCaption"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">LITTLE <span>NZOU</span> Creative Studio</div>
+        <div class="footer-tagline">Imagination &nbsp;·&nbsp; Inspiration &nbsp;·&nbsp; Manifestation</div>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#process">Process</a></li>
+        <li><a href="index.html#shop">Shop</a></li>
+        <li><a href="index.html#tutorials">Tutorials</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="https://shop.littlenzou.com" target="_blank">Digital Shop</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2020 Little Nzou Creative Studio. All rights reserved.</p>
+      <p class="footer-loc">Dubai, United Arab Emirates &nbsp;·&nbsp; info@littlenzou.com</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// DOODLE CANVAS
+const canvas = document.getElementById('doodle-canvas');
+const ctx = canvas.getContext('2d');
+let W, H, doodles = [];
+function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+resize();
+window.addEventListener('resize', () => { resize(); initDoodles(); });
+
+const doodleShapes = [
+  (x,y,s,r) => { ctx.save();ctx.translate(x,y);ctx.rotate(r);ctx.beginPath();ctx.roundRect(-s*.7,-s*.5,s*1.4,s,s*.12);ctx.stroke();ctx.beginPath();ctx.arc(0,0,s*.32,0,Math.PI*2);ctx.stroke();ctx.beginPath();ctx.arc(-s*.5,-s*.5,s*.1,0,Math.PI*2);ctx.fill();ctx.restore(); },
+  (x,y,s,r) => { ctx.save();ctx.translate(x,y);ctx.rotate(r);ctx.strokeRect(-s*.65,-s*.38,s*1.3,s*.76);for(let i=-2;i<=2;i++){ctx.fillRect(-s*.45+i*s*.42,-s*.38,s*.13,s*.14);ctx.fillRect(-s*.45+i*s*.42,s*.24,s*.13,s*.14);}ctx.restore(); },
+  (x,y,s,r) => { ctx.save();ctx.translate(x,y);ctx.rotate(r);ctx.beginPath();ctx.moveTo(-s*.6,-s*.3);ctx.bezierCurveTo(-s*.2,s*.6,s*.2,-s*.6,s*.6,s*.3);ctx.stroke();ctx.beginPath();ctx.arc(-s*.6,-s*.3,s*.07,0,Math.PI*2);ctx.fill();ctx.beginPath();ctx.arc(s*.6,s*.3,s*.07,0,Math.PI*2);ctx.fill();ctx.restore(); },
+  (x,y,s,r) => { ctx.save();ctx.translate(x,y);ctx.rotate(r);ctx.beginPath();ctx.moveTo(0,-s*.7);ctx.lineTo(s*.38,s*.28);ctx.lineTo(0,s*.65);ctx.lineTo(-s*.38,s*.28);ctx.closePath();ctx.stroke();ctx.beginPath();ctx.moveTo(0,s*.18);ctx.lineTo(0,s*.65);ctx.stroke();ctx.restore(); },
+  (x,y,s,r) => { ctx.save();ctx.translate(x,y);ctx.rotate(r);ctx.beginPath();ctx.arc(0,0,s*.68,0,Math.PI*2);ctx.stroke();ctx.beginPath();ctx.moveTo(-s*.2,-s*.3);ctx.lineTo(s*.42,0);ctx.lineTo(-s*.2,s*.3);ctx.closePath();ctx.stroke();ctx.restore(); },
+  (x,y,s,r) => { ctx.save();ctx.translate(x,y);ctx.rotate(r);for(let i=0;i<3;i++)ctx.strokeRect(-s*.5+i*s*.06,(i-1)*s*.28-s*.08,s,s*.56);ctx.restore(); },
+  (x,y,s,r) => { ctx.save();ctx.translate(x,y);ctx.rotate(r);ctx.beginPath();for(let i=0;i<8;i++){const a=(i/8)*Math.PI*2,r1=i%2===0?s*.5:s*.2;i===0?ctx.moveTo(Math.cos(a)*r1,Math.sin(a)*r1):ctx.lineTo(Math.cos(a)*r1,Math.sin(a)*r1);}ctx.closePath();ctx.stroke();ctx.restore(); },
+  (x,y,s,r) => { ctx.save();ctx.translate(x,y);ctx.rotate(r);ctx.beginPath();ctx.arc(0,0,s*.48,0,Math.PI*2);ctx.stroke();ctx.beginPath();ctx.moveTo(-s*.72,0);ctx.lineTo(s*.72,0);ctx.stroke();ctx.beginPath();ctx.moveTo(0,-s*.72);ctx.lineTo(0,s*.72);ctx.stroke();ctx.restore(); },
+];
+
+function initDoodles() {
+  doodles = [];
+  const count = Math.floor((W*H)/38000);
+  for(let i=0;i<count;i++){
+    doodles.push({
+      x:Math.random()*W, y:Math.random()*H,
+      s:18+Math.random()*38, r:Math.random()*Math.PI*2,
+      vr:(Math.random()-.5)*.003,
+      vy:(Math.random()-.5)*.1, vx:(Math.random()-.5)*.1,
+      shape:doodleShapes[Math.floor(Math.random()*doodleShapes.length)],
+      alpha:.3+Math.random()*.7
+    });
+  }
+}
+initDoodles();
+
+function drawFrame() {
+  ctx.clearRect(0,0,W,H);
+  doodles.forEach(d => {
+    ctx.save();
+    ctx.globalAlpha = d.alpha;
+    ctx.strokeStyle = '#C8A951'; ctx.fillStyle = '#C8A951'; ctx.lineWidth = 1.1;
+    d.shape(d.x,d.y,d.s,d.r);
+    ctx.restore();
+    d.r+=d.vr; d.x+=d.vx; d.y+=d.vy;
+    if(d.x<-70)d.x=W+70; if(d.x>W+70)d.x=-70;
+    if(d.y<-70)d.y=H+70; if(d.y>H+70)d.y=-70;
+  });
+  requestAnimationFrame(drawFrame);
+}
+drawFrame();
+
+// NAV TOGGLE
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+// LIGHTBOX LOGIC
+function openModal(imgSrc, caption) {
+  const modal = document.getElementById('imageModal');
+  document.getElementById('modalImg').src = imgSrc;
+  document.getElementById('modalCaption').innerText = caption;
+  modal.classList.add('open');
+}
+
+function closeModal(e) {
+  if (e.target.id === 'imageModal' || e.target.classList.contains('modal-close')) {
+    document.getElementById('imageModal').classList.remove('open');
+  }
+}
+</script>
+</body>
+</html>
